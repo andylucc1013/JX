@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>北海道星野度假村雪國之旅</title>
+    <title>❄️ 北海道・星野雪國之旅 ❄️</title>
     <style>
         :root {
             --pink-light: #fff0f6;
@@ -26,103 +26,114 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.08);
             border: 6px solid #fff;
         }
-        .header-img {
-            width: 100%; height: 220px;
-            background: #ffc9e3 url('https://images.unsplash.com/photo-1548141280-99e526a0b4c8?auto=format&fit=crop&w=800&q=80') center/cover;
-            display: flex; align-items: flex-end; justify-content: center;
+        /* 使用 Base64 圖示裝飾 */
+        .header-banner {
+            background: linear-gradient(135deg, #ffadd2 0%, #ff85c0 100%);
+            padding: 40px 20px;
+            text-align: center;
+            color: white;
         }
-        .header-title {
-            background: rgba(255, 255, 255, 0.92);
-            padding: 15px 25px; border-radius: 20px 20px 0 0;
-            text-align: center; width: 85%;
-        }
-        .header-title h1 { margin: 0; font-size: 22px; color: var(--pink-dark); }
-        .section { padding: 20px 25px; }
-        .photo-grid {
-            display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 25px;
-        }
-        .photo-item {
-            height: 120px; border-radius: 15px; background: #f0f0f0 center/cover;
-            display: flex; align-items: flex-end; padding: 10px;
-            color: white; font-size: 13px; font-weight: bold; text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
-        }
-        .day-card {
+        .header-banner h1 { margin: 0; font-size: 24px; letter-spacing: 2px; }
+        .section { padding: 25px; }
+        
+        /* 行程卡片 */
+        .card {
             background: #fff; border-radius: 20px; padding: 18px;
-            margin-bottom: 15px; border: 1px solid #ffe7f3;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.02);
+            margin-bottom: 20px; border: 1px solid #ffe7f3;
+            box-shadow: 0 4px 12px rgba(235, 47, 150, 0.05);
         }
-        .day-header { display: flex; align-items: center; margin-bottom: 10px; }
-        .day-badge { background: var(--pink-main); color: #fff; padding: 2px 12px; border-radius: 15px; font-size: 13px; margin-right: 10px; }
-        .day-title { font-weight: bold; color: var(--pink-dark); font-size: 15px; }
-        .feature-box {
-            background: var(--blue-soft); border-radius: 20px; padding: 18px;
-            margin-top: 20px; border: none;
+        .day-badge { 
+            display: inline-block; background: var(--pink-main); color: #fff; 
+            padding: 3px 15px; border-radius: 20px; font-size: 14px; margin-bottom: 10px;
         }
-        .feature-box h3 { margin: 0 0 10px 0; font-size: 16px; color: #1890ff; display: flex; align-items: center; }
-        .item-list { font-size: 14px; line-height: 1.8; }
-        .tag { display: inline-block; background: #fff; border: 1px solid var(--pink-main); color: var(--pink-main); padding: 0px 6px; border-radius: 6px; font-size: 11px; margin-right: 5px; vertical-align: middle; }
+        .title-text { font-weight: bold; color: var(--pink-dark); font-size: 17px; margin-bottom: 8px; }
+
+        /* 攻略區塊 */
+        .info-box {
+            background: var(--blue-soft); border-radius: 20px; padding: 20px;
+            margin-top: 25px;
+        }
+        .info-box h3 { margin: 0 0 12px 0; font-size: 18px; color: #1890ff; display: flex; align-items: center; }
+        
+        .list-item { font-size: 14px; line-height: 1.9; margin-bottom: 10px; }
+        .tag-pink { background: #fff0f6; color: #eb2f96; padding: 2px 8px; border-radius: 8px; font-size: 12px; font-weight: bold; margin-right: 5px; }
+        .tag-blue { background: #e6f7ff; color: #1890ff; padding: 2px 8px; border-radius: 8px; font-size: 12px; font-weight: bold; margin-right: 5px; }
+
         .footer { text-align: center; padding: 30px; font-size: 12px; color: #ff85c0; background: #fff9fc; }
+        
+        /* 視覺圖片替代方案：使用帶背景色的精美圖示區塊 */
+        .pic-placeholder {
+            width: 100%; height: 150px; background-color: #ffe7f3;
+            border-radius: 15px; margin-bottom: 15px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 40px;
+        }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <div class="header-img">
-        <div class="header-title">
-            <h1>❄️ 北海道・星野雪國之旅 ❄️</h1>
-            <p style="font-size: 13px; margin: 5px 0 0; color: #ff85c0;">客製化 6 日精華手冊</p>
-        </div>
+    <div class="header-banner">
+        <h1>❄️ 北海道・雪國之旅 ❄️</h1>
+        <p style="margin-top:10px; opacity:0.9;">星宇航空客製化 6 日精華</p>
     </div>
 
     <div class="section">
-        <div class="photo-grid">
-            [span_0](start_span)<div class="photo-item" style="background-image: url('https://images.unsplash.com/photo-1517154421773-0529f29ea451?auto=format&fit=crop&w=300&q=80');">星野雙塔[span_0](end_span)</div>
-            [span_1](start_span)<div class="photo-item" style="background-image: url('https://images.unsplash.com/photo-1553531384-411a247ccd73?auto=format&fit=crop&w=300&q=80');">旭山企鵝[span_1](end_span)</div>
-            [span_2](start_span)<div class="photo-item" style="background-image: url('https://images.unsplash.com/photo-1621230182206-d13eb201946f?auto=format&fit=crop&w=300&q=80');">三大螃蟹[span_2](end_span)</div>
-            [span_3](start_span)<div class="photo-item" style="background-image: url('https://images.unsplash.com/photo-1507409613952-518459ac827e?auto=format&fit=crop&w=300&q=80');">水之教堂[span_3](end_span)</div>
-        </div>
-
-        <div class="day-card">
-            <div class="day-header">
-                <div class="day-badge">Day 1-2</div>
-                <div class="day-title">星野度假村夢幻開端</div>
-            </div>
-            <div class="item-list">
-                [span_4](start_span)[span_5](start_span)[span_6](start_span)🌲 <b>森林自助餐廳：</b> 感受被壯觀冷杉林環繞的用餐氛圍[span_4](end_span)[span_5](end_span)[span_6](end_span)。<br>
-                [span_7](start_span)⛷️ <b>29 條滑雪道：</b> 享受世界頂級粉雪的滑行快感[span_7](end_span)。<br>
-                [span_8](start_span)⛪ <b>水之教堂：</b> 漫步於安藤忠雄大師的極簡雪中聖地[span_8](end_span)。
+        <div class="pic-placeholder">🏨</div>
+        
+        <div class="card">
+            <div class="day-badge">Day 1-2 星野度假村</div>
+            <div class="title-text">入住夢幻雙塔・森林饗宴</div>
+            <div class="list-item">
+                🌲 <b>森林餐廳：</b> 在夢幻針葉林包圍下享用自助大餐。<br>
+                ⛪ <b>水之教堂：</b> 欣賞安藤忠雄極簡大氣的雪中建築。<br>
+                🎿 <b>雪上活動：</b> 含纜車票，體驗世界級粉雪滑行。
             </div>
         </div>
 
-        <div class="feature-box" style="background: #fff0f6;">
-            <h3 style="color: #eb2f96;">🛍️ 狸小路逛街地圖 (Day 3)</h3>
-            <div class="item-list">
-                [span_9](start_span)📍 <span class="tag">推薦</span> <b>唐吉訶德 (MEGA)</b> - 24小時不打烊大採買[span_9](end_span)。<br>
-                [span_10](start_span)📍 <span class="tag">必看</span> <b>札幌藥妝</b>、<b>狸大明神社</b>[span_10](end_span)。
+        <div class="card">
+            <div class="day-badge">Day 3-4 市區與浪漫小樽</div>
+            <div class="title-text">企鵝散步・小樽運河・螃蟹盛宴</div>
+            <div class="list-item">
+                🐧 <b>旭山動物園：</b> 冬季必看企鵝漫步與北極熊。<br>
+                🚢 <b>小樽運河：</b> 瓦斯燈影下的浪漫散策。<br>
+                🦀 <b>三大蟹放題：</b> 豪華螃蟹、和牛與酒水無限暢飲。
             </div>
         </div>
 
-        <div class="feature-box">
-            <h3>🍪 新千歲機場必買 (Day 6)</h3>
-            <div class="item-list">
-                🎁 <span class="tag">伴手</span> <b>六花亭</b>、<b>Royce 巧克力</b>、<b>薯條三兄弟</b>。<br>
-                [span_11](start_span)🎁 <span class="tag">限定</span> <b>LeTAO 起司蛋糕</b>、<b>北菓樓夢不思議泡芙</b>[span_11](end_span)。
+        <div class="info-box" style="background-color: #fff0f6;">
+            <h3 style="color: #eb2f96;">🛍️ 狸小路逛街攻略 (D3)</h3>
+            <div class="list-item">
+                📍 <span class="tag-pink">必逛</span> <b>唐吉訶德 (MEGA)</b> - 24H 零食藥妝一次買齊。<br>
+                📍 <span class="tag-pink">藥妝</span> <b>札幌藥妝 (Sapporo Drug)</b> - 店面寬敞、貨源最足。<br>
+                📍 <span class="tag-pink">特色</span> <b>本陣狸大名神社</b> - 祈求旅遊平安與好運。
             </div>
         </div>
 
-        <div class="day-card" style="margin-top: 20px; background: #fdfdfd;">
-            <div class="day-title" style="color: #722ed1; margin-bottom: 10px;">📋 旅程貼心提醒</div>
-            <div style="font-size: 13px; line-height: 1.7;">
-                [span_12](start_span)[span_13](start_span)🏨 <b>優質住宿：</b> 2 晚星野 TOMAMU、1 晚洞爺湖湖景飯店[span_12](end_span)[span_13](end_span)。<br>
-                [span_14](start_span)[span_15](start_span)🦀 <b>頂級餐飲：</b> 安排北海道三大蟹吃到飽與酒水暢飲[span_14](end_span)[span_15](end_span)。<br>
-                [span_16](start_span)🎒 <b>行李額度：</b> 23kg 托運 + 10kg 手提行李[span_16](end_span)。
+        <div class="pic-placeholder">🍪</div>
+
+        <div class="info-box">
+            <h3>✈️ 新千歲機場必買 (D6)</h3>
+            <div class="list-item">
+                🎁 <span class="tag-blue">經典</span> <b>六花亭餅乾</b>、<b>Royce 巧克力洋芋片</b>。<br>
+                🎁 <span class="tag-blue">推薦</span> <b>北菓樓夢不思議泡芙</b>、<b>LeTAO 起司蛋糕</b>。<br>
+                🎁 <span class="tag-blue">人氣</span> <b>薯條三兄弟</b>、北海道限定白雷神。
+            </div>
+        </div>
+
+        <div class="card" style="margin-top:25px; background:#fdfdfd; border-color:#d3adf7;">
+            <div class="title-text" style="color:#722ed1;">📋 旅程溫馨提醒</div>
+            <div class="list-item" style="font-size:13px;">
+                ✨ <b>精選住宿：</b> 2晚星野、1晚洞爺湖湖景房。<br>
+                💼 <b>行李額度：</b> 23kg 托運 + 10kg 手提。<br>
+                🌡️ <b>穿著建議：</b> 3月雪地寒冷，請備妥防滑鞋與保暖衣物。
             </div>
         </div>
     </div>
 
     <div class="footer">
         ❄️ Wish You a Wonderful Trip! ❄️<br>
-        [span_17](start_span)<span style="font-size: 11px; opacity: 0.6;">(航班：JX850/JX851[span_17](end_span))</span>
+        <span style="font-size:10px; opacity:0.7;">(航班資訊：JX850 / JX851)</span>
     </div>
 </div>
 
