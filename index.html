@@ -54,7 +54,6 @@
             font-weight: 700;
         }
 
-        /* 航班表格樣式 */
         .flight-table {
             width: 100%;
             border-collapse: collapse;
@@ -82,7 +81,15 @@
             font-size: 0.9rem;
         }
 
-        /* 推薦清單樣式 */
+        /* 推薦與餐廳資訊樣式 */
+        .info-box {
+            background: #fff;
+            border-left: 4px solid #ffcc00;
+            padding: 12px 15px;
+            margin: 15px 0;
+            border-radius: 0 10px 10px 0;
+            font-size: 0.9rem;
+        }
         .recommend-box {
             background: #fff;
             border-left: 4px solid #4caf50;
@@ -91,7 +98,7 @@
             border-radius: 0 10px 10px 0;
             font-size: 0.9rem;
         }
-        .recommend-title { color: #2e7d32; font-weight: 700; margin-bottom: 5px; display: block; }
+        .box-title { font-weight: 700; margin-bottom: 5px; display: block; }
 
         .sticky-cta {
             position: fixed;
@@ -125,24 +132,9 @@
     <div class="card">
         <h3 style="margin-top:0; color:var(--accent-blue)"><i class="bi bi-airplane-engines"></i> 航班資訊 (星宇航空)</h3>
         <table class="flight-table">
-            <tr>
-                <th>航程</th>
-                <th>航班</th>
-                <th>起飛</th>
-                <th>抵達</th>
-            </tr>
-            <tr>
-                <td>台北 → 札幌</td>
-                <td>JX850</td>
-                <td>09:25</td>
-                <td>14:00</td>
-            </tr>
-            <tr>
-                <td>札幌 → 台北</td>
-                <td>JX851</td>
-                <td>15:15</td>
-                <td>18:50</td>
-            </tr>
+            <tr><th>航程</th><th>航班</th><th>起飛</th><th>抵達</th></tr>
+            <tr><td>台北 → 札幌</td><td>JX850</td><td>09:25</td><td>14:00</td></tr>
+            <tr><td>札幌 → 台北</td><td>JX851</td><td>15:15</td><td>18:50</td></tr>
         </table>
     </div>
 
@@ -165,33 +157,43 @@
         <div class="meal-box">🏨 住宿：星野 TOMAMU 渡假村</div>
     </div>
 
-    <h3 class="section-title">Day 03 | 萌動與購物</h3>
+    <h3 class="section-title">Day 03 | 萌動動物園與購物</h3>
     <div class="card">
         <span class="day-num">DAY 3</span>
-        <p>旭山動物園 → 札幌狸小路商店街</p>
+        <p>旭山動物園 → 免稅店 → 札幌狸小路商店街</p>
         
+        <div class="info-box">
+            <span class="box-title" style="color: #d4a017;"><i class="bi bi-info-circle"></i> 動物園午餐自理推薦：</span>
+            <ul style="margin:5px 0; padding-left:20px;">
+                <li>旭山動物園中央食堂</li>
+                <li>Food Base Cafe TOTORI</li>
+                <li>Museum Cafe ASAHIYAMA</li>
+                <li>カムイチカプ (Kamuy-Cikap)</li>
+            </ul>
+        </div>
+
         <div class="recommend-box">
-            <span class="recommend-title"><i class="bi bi-bag-check"></i> 狸小路推薦必逛：</span>
-            狸小路 1~7 丁目商店街：藥妝店 (松本清、札幌藥妝)、唐吉訶德、伴手禮店 (土產屋)。
+            <span class="box-title" style="color: #2e7d32;"><i class="bi bi-bag-check"></i> 狸小路推薦必逛：</span>
+            藥妝店 (松本清、札幌藥妝)、唐吉訶德、伴手禮店 (土產屋)。
         </div>
 
         <div class="img-box"><img src="penguin_walk.jpeg"></div>
-        <div class="img-box"><img src="zoo_map.jpeg"></div>
+        <div class="img-box" style="border: 1px dashed #ccc;"><img src="zoo_map.jpeg"></div>
         <div class="meal-box">🏨 住宿：札幌系列飯店</div>
     </div>
 
-    <h3 class="section-title">Day 04 | 浪漫小樽與神宮</h3>
+    <h3 class="section-title">Day 04 | 浪漫小樽巡禮</h3>
     <div class="card">
         <span class="day-num">DAY 4</span>
         <p>小樽運河 → 北海道神宮 → 札幌三大螃蟹放題</p>
         <div class="recommend-box">
-            <span class="recommend-title"><i class="bi bi-shop"></i> 小樽推薦：</span>
+            <span class="box-title" style="color: #2e7d32;"><i class="bi bi-shop"></i> 小樽推薦：</span>
             北一哨子館、音樂盒博物館、LeTAO 總店蛋糕。
         </div>
         <div class="meal-box">🍴 晚餐：三大螃蟹吃到飽 / 🏨 住宿：札幌系列飯店</div>
     </div>
 
-    <h3 class="section-title">Day 05 | 溫泉奇觀</h3>
+    <h3 class="section-title">Day 05 | 溫泉之夜</h3>
     <div class="card">
         <span class="day-num">DAY 5</span>
         <div class="img-box"><img src="toya_hotel.jpeg"></div>
@@ -202,15 +204,9 @@
     <div class="card">
         <span class="day-num">DAY 6</span>
         <p>新千歲空港 ✈ 台北</p>
-        
         <div class="recommend-box">
-            <span class="recommend-title"><i class="bi bi-cart4"></i> 新千歲機場國內線推薦必買：</span>
-            <ul style="margin:5px 0; padding-left:20px;">
-                <li><strong>哆啦A夢天空樂園：</strong>限定周邊。</li>
-                <li><strong>Royce' Chocolate World：</strong>現場製作巧克力。</li>
-                <li><strong>卡樂比 Calbee+：</strong>現炸薯片。</li>
-                <li><strong>北菓樓：</strong>「開拓御小米」米菓。</li>
-            </ul>
+            <span class="box-title" style="color: #2e7d32;"><i class="bi bi-cart4"></i> 新千歲機場國內線推薦：</span>
+            哆啦A夢天空樂園、Royce' Chocolate World、卡樂比 Calbee+、北菓樓。
         </div>
     </div>
 </div>
