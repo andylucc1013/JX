@@ -21,90 +21,84 @@
             color: var(--deep-blue);
             margin: 0;
             padding: 0;
+            line-height: 1.6;
             background-image: linear-gradient(180deg, #d6eaf8 0%, #f0f8ff 100%);
         }
 
-        /* 頂部大圖 - 請準備 hero.jpg */
+        /* 頂部大圖 - hero.jpg */
         .hero {
-            height: 50vh;
+            height: 45vh;
             background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('hero.jpg') center/cover no-repeat;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
             text-align: center;
-            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
         }
 
-        .container { max-width: 800px; margin: -50px auto 100px; padding: 0 20px; }
+        .hero-content h1 { font-size: 2.2rem; margin: 0; text-shadow: 2px 2px 10px rgba(0,0,0,0.5); }
+        .hero-content p { font-size: 1.1rem; margin-top: 10px; opacity: 0.9; }
 
-        .highlights {
+        .container { max-width: 800px; margin: -40px auto 120px; padding: 0 15px; }
+
+        .card {
             background: var(--glass);
-            padding: 30px;
+            padding: 25px;
             border-radius: 20px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.05);
             backdrop-filter: blur(10px);
-            margin-bottom: 30px;
+            margin-bottom: 25px;
+            border: 1px solid rgba(255,255,255,0.3);
         }
 
         .section-title {
             border-left: 5px solid var(--accent-blue);
             padding-left: 15px;
-            margin: 40px 0 20px;
+            margin: 30px 0 15px;
             font-weight: 700;
+            color: var(--deep-blue);
         }
 
-        .day-card {
-            background: var(--snow-white);
-            border-radius: 15px;
-            padding: 25px;
-            margin-bottom: 20px;
-            border: 1px solid rgba(0, 119, 190, 0.1);
-        }
-
-        .day-num { color: var(--accent-blue); font-weight: 700; font-size: 1.5rem; }
-
-        /* 地圖區塊 - 請準備 map.jpg */
-        .map-container {
-            margin-top: 15px;
-            text-align: center;
+        .day-num { color: var(--accent-blue); font-weight: 700; font-size: 1.4rem; display: block; margin-bottom: 5px; }
+        .day-title { font-size: 1.1rem; font-weight: 700; margin-bottom: 10px; display: block; }
+        
+        /* 地圖區塊 - map.jpg */
+        .map-box {
+            margin: 15px 0;
             background: #fff;
-            padding: 10px;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            padding: 8px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
         }
-        .map-image {
-            width: 100%;
-            height: auto;
-            border-radius: 5px;
-            cursor: zoom-in;
-            transition: 0.3s;
-        }
-        .map-caption {
-            font-size: 0.85rem;
-            color: #666;
-            margin-top: 8px;
-            display: block;
-        }
+        .map-box img { width: 100%; border-radius: 8px; display: block; }
+        .map-tag { font-size: 0.8rem; color: #777; display: block; text-align: center; margin-top: 5px; }
 
-        .meal-info { background: #f8f9fa; padding: 10px 15px; border-radius: 8px; margin-top: 15px; font-size: 0.9rem; line-height: 1.6; }
+        .meal-box {
+            background: rgba(0, 119, 190, 0.05);
+            padding: 15px;
+            border-radius: 12px;
+            margin-top: 15px;
+            font-size: 0.9rem;
+        }
+        .meal-item { margin-bottom: 5px; display: flex; align-items: flex-start; }
+        .meal-item i { margin-right: 8px; color: var(--accent-blue); }
 
         .sticky-cta {
             position: fixed;
-            bottom: 20px;
+            bottom: 25px;
             left: 50%;
             transform: translateX(-50%);
-            width: 90%;
-            max-width: 400px;
+            width: 85%;
+            max-width: 350px;
             background: var(--accent-blue);
             color: white;
             text-align: center;
-            padding: 15px;
+            padding: 14px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 700;
-            box-shadow: 0 5px 20px rgba(0, 119, 190, 0.4);
-            z-index: 1000;
+            box-shadow: 0 8px 25px rgba(0, 119, 190, 0.3);
+            z-index: 9999;
         }
     </style>
 </head>
@@ -113,36 +107,93 @@
 <div class="hero">
     <div class="hero-content">
         <h1>北海道星野度假村客製6日</h1>
-        <p>浪漫雪國．極上粉雪體驗</p>
+        <p>星宇航空．雙星野．三大蟹美饌</p>
     </div>
 </div>
 
 <div class="container">
-    <div class="highlights">
-        <h3 style="margin-top:0"><i class="bi bi-star-fill"></i> 行程特色</h3>
-        <p>入住星野 TOMAMU 渡假村、洞爺湖溫泉，享受北國三大蟹放題與絕美冬景。</p>
+    <div class="card">
+        <h3 style="margin-top:0; color:var(--accent-blue)"><i class="bi bi-snow"></i> 行程亮點</h3>
+        <ul style="padding-left: 20px; margin-bottom:0">
+            <li><strong>極致住宿：</strong>保證入住 2 晚星野 TOMAMU 渡假村</li>
+            <li><strong>湖景溫泉：</strong>入住洞爺湖溫泉華美酒店，欣賞絕美湖景</li>
+            <li><strong>奢華饗宴：</strong>森林自助餐廳、三大螃蟹＋海鮮自助放題</li>
+            <li><strong>經典玩樂：</strong>旭山動物園企鵝散步、小樽運河浪漫散策</li>
+        </ul>
+    </div>
+
+    <h3 class="section-title">Day 01 | 飛往北國大地</h3>
+    <div class="card">
+        <span class="day-num">DAY 1</span>
+        <span class="day-title">桃園國際機場 ✈ 札幌新千歲空港 → 星野 TOMAMU 渡假村</span>
+        <p>今日搭乘精品航空「星宇航空」飛往北海道。抵達後前往矗立在北國大地中的星野雙塔建築，開啟奢華渡假之旅。</p>
+        <div class="meal-box">
+            <div class="meal-item"><i class="bi bi-egg-fried"></i> 早餐：自理 / 午餐：機上餐點 / 晚餐：森林自助式餐廳</div>
+            <div class="meal-item"><i class="bi bi-house-door"></i> 住宿：星野 TOMAMU 渡假村</div>
+        </div>
     </div>
 
     <h3 class="section-title">Day 02 | 星野渡假村全日體驗</h3>
-    <div class="day-card">
-        <div class="day-num">Day 2</div>
-        <p>安藤忠雄經典建築【水之教堂】 → 雲海平台（視天氣） → 微笑海灘 → 木林之湯溫泉</p>
-        
-        <div class="map-container">
-            <img src="map.jpg" alt="星野度假村地圖" class="map-image">
-            <span class="map-caption"><i class="bi bi-info-circle"></i> 星野 TOMAMU 渡假村設施導覽圖</span>
+    <div class="card">
+        <span class="day-num">DAY 2</span>
+        <span class="day-title">水之教堂 → 雪上活動體驗 → 微笑海灘 → 木林之湯</span>
+        <p>全日悠閒享受渡假村設施：參觀安藤忠雄經典「水之教堂」，或前往室內人造海灘「微笑海灘」感受溫暖浪花。</p>
+        <div class="map-box">
+            <img src="map.jpg" alt="星野導覽地圖">
+            <span class="map-tag">星野 TOMAMU 渡假村設施導覽圖</span>
         </div>
-
-        <div class="meal-info">
-            🍴 早餐：飯店內 / 晚餐：渡假村內自選<br>
-            🏨 住宿：指定星野TOMAMU 渡假村
+        <div class="meal-box">
+            <div class="meal-item"><i class="bi bi-egg-fried"></i> 早餐：飯店內 / 午餐：自理 / 晚餐：渡假村內自選</div>
+            <div class="meal-item"><i class="bi bi-house-door"></i> 住宿：星野 TOMAMU 渡假村</div>
         </div>
     </div>
 
+    <h3 class="section-title">Day 03 | 萌動動物園與購物</h3>
+    <div class="card">
+        <span class="day-num">DAY 3</span>
+        <span class="day-title">旭山動物園 → 免稅店 → 札幌狸小路商店街</span>
+        <p>造訪超人氣旭山動物園，看企鵝漫步與北極熊戲水。傍晚回到札幌最熱鬧的狸小路，盡情選購藥妝與伴手禮。</p>
+        <div class="meal-box">
+            <div class="meal-item"><i class="bi bi-egg-fried"></i> 早餐：飯店內 / 午餐：方便遊玩敬請自理 / 晚餐：自理</div>
+            <div class="meal-item"><i class="bi bi-house-door"></i> 住宿：札幌系列飯店 (Classe / APA 或同級)</div>
+        </div>
+    </div>
+
+    <h3 class="section-title">Day 04 | 浪漫小樽與神宮祈福</h3>
+    <div class="card">
+        <span class="day-num">DAY 4</span>
+        <span class="day-title">小樽運河散策 → 北海道神宮 → AEON MALL 購物</span>
+        <p>漫步在浪漫的小樽運河，欣賞石造倉庫群。隨後前往北海道總鎮守「北海道神宮」祈福參拜。</p>
+        <div class="meal-box">
+            <div class="meal-item"><i class="bi bi-egg-fried"></i> 早餐：飯店內 / 午餐：自理 / 晚餐：三大螃蟹吃到飽</div>
+            <div class="meal-item"><i class="bi bi-house-door"></i> 住宿：札幌系列飯店 (Classe / APA 或同級)</div>
+        </div>
+    </div>
+
+    <h3 class="section-title">Day 05 | 地熱奇觀與湖景溫泉</h3>
+    <div class="card">
+        <span class="day-num">DAY 5</span>
+        <span class="day-title">市區觀光 → 登別地獄谷 → 洞爺湖溫泉</span>
+        <p>前往煙霧繚繞的地獄谷感受震撼地熱，晚間入住洞爺湖華美酒店，享受舒適的溫泉與湖景。</p>
+        <div class="meal-box">
+            <div class="meal-item"><i class="bi bi-egg-fried"></i> 早餐：飯店內 / 午餐：自理 / 晚餐：溫泉飯店自助餐</div>
+            <div class="meal-item"><i class="bi bi-house-door"></i> 住宿：洞爺湖華美酒店</div>
+        </div>
+    </div>
+
+    <h3 class="section-title">Day 06 | 珍重再見</h3>
+    <div class="card">
+        <span class="day-num">DAY 6</span>
+        <span class="day-title">新千歲空港 ✈ 桃園國際機場</span>
+        <p>最後在國內線航站逛逛北海道特色土產，帶著滿滿的回憶搭機返台。</p>
+        <div class="meal-box">
+            <div class="meal-item"><i class="bi bi-egg-fried"></i> 早餐：飯店內 / 午餐：方便逛街敬請自理 / 晚餐：機上餐點</div>
+        </div>
+    </div>
 </div>
 
 <a href="tel:請填入電話" class="sticky-cta">
-    <i class="bi bi-telephone-fill"></i> 立即諮詢行程 (點此撥號)
+    <i class="bi bi-chat-heart"></i> 聯繫行程諮詢 (點此撥號)
 </a>
 
 </body>
