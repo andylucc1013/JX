@@ -57,7 +57,6 @@
             align-items: center;
         }
 
-        /* 明確行程標籤 */
         .day-header {
             display: flex;
             align-items: center;
@@ -73,7 +72,6 @@
         }
         .day-route { font-weight: 700; font-size: 1.1rem; color: #333; }
 
-        /* 行程細項 */
         .itinerary-detail {
             list-style: none;
             padding: 0;
@@ -85,7 +83,7 @@
             margin-bottom: 8px;
         }
         .itinerary-detail li::before {
-            content: "\F26A"; /* Bootstrap Icon Circle */
+            content: "\F26A";
             font-family: "bootstrap-icons";
             position: absolute;
             left: 0;
@@ -118,6 +116,20 @@
             font-size: 0.85rem;
             margin: 10px 0;
             border-radius: 0 5px 5px 0;
+        }
+
+        /* 企鵝限定樣式 */
+        .event-tag {
+            background: #e3f2fd;
+            border: 1px solid #90caf9;
+            color: #1565c0;
+            padding: 10px;
+            font-size: 0.85rem;
+            margin: 10px 0;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
         .flight-info {
@@ -156,9 +168,9 @@
             <span class="day-route">桃園機場 ✈ 札幌新千歲空港 → 星野 TOMAMU</span>
         </div>
         <ul class="itinerary-detail">
-            <li>搭乘星宇航空精品客機，享用機上餐點。</li>
+            <li>搭乘星宇航空精品客機，享用精緻機上餐點。</li>
             <li>抵達後前往北海道地標「星野 TOMAMU 渡假村」。</li>
-            <li>晚間於網紅景點「森林餐廳」享用豐盛自助餐。</li>
+            <li>晚間於超人氣「森林餐廳」享用豐盛自助餐。</li>
         </ul>
         <div style="display: flex; gap: 5px; margin: 10px 0;">
             <img src="forest_restaurant_1.jpeg" style="width:50%; border-radius:10px;">
@@ -178,8 +190,8 @@
         </div>
         <ul class="itinerary-detail">
             <li>參訪安藤忠雄大師作品「水之教堂」。</li>
-            <li>盡情享受渡假村內雪上活動設施。</li>
-            <li>全台室內最大的室內人造浪泳池「微笑海灘」。</li>
+            <li>盡情享受渡假村內豐富雪上活動設施。</li>
+            <li>探訪全台室內最大的室內人造浪泳池「微笑海灘」。</li>
         </ul>
         <div class="img-box"><img src="water_chapel.jpeg"></div>
         <div class="img-box"><img src="map.jpeg"></div>
@@ -195,12 +207,21 @@
             <span class="day-badge">行程</span>
             <span class="day-route">旭山動物園 → 免稅店 → 札幌狸小路商店街</span>
         </div>
+
+        <div class="event-tag">
+            <i class="bi bi-info-square-fill" style="font-size: 1.2rem;"></i>
+            <div>
+                <strong>冬季限定：企鵝散步 (預計 12月中~3月中)</strong><br>
+                每天進行兩次：<strong>11:00</strong> 與 <strong>14:30</strong> (各約30-40分鐘)
+            </div>
+        </div>
+
         <div class="recommend-tag">
             <b>🍴 午餐自理推薦：</b> 中央食堂、Cafe TOTORI、Museum Cafe、カムイチカプ
         </div>
         <ul class="itinerary-detail">
-            <li>觀看超萌「企鵝散步」與北極熊餵食秀。</li>
-            <li>札幌最大規模「狸小路商店街」盡情購物、享受土產。</li>
+            <li>看北極熊、海豹及冬季限定的企鵝雪地遊行。</li>
+            <li>前往札幌最大「狸小路商店街」採買各式藥妝土產。</li>
         </ul>
         <div class="img-box"><img src="penguin_walk.jpeg"></div>
         <div class="img-box" style="border: 1px dashed #ccc;"><img src="zoo_map.jpeg"></div>
@@ -218,7 +239,7 @@
         </div>
         <ul class="itinerary-detail">
             <li>小樽運河散策：北一哨子、音樂盒博物館、LeTAO甜點。</li>
-            <li>北海道總鎮守「北海道神宮」參拜祈福。</li>
+            <li>參拜北海道總鎮守「北海道神宮」。</li>
             <li><b>特別安排：</b>晚餐享用三大螃蟹(鱈場、長腳、毛蟹)吃到飽。</li>
         </ul>
         <div class="info-grid">
@@ -229,13 +250,14 @@
 
     <div class="section-title"><i class="bi bi-calendar-event me-2"></i> DAY 05 | 溫泉奇觀之夜</div>
     <div class="card">
+        <span class="day-num" style="display:none">D5</span>
         <div class="day-header">
             <span class="day-badge">行程</span>
             <span class="day-route">市區觀光 → 登別地獄谷 → 洞爺湖溫泉酒店</span>
         </div>
         <ul class="itinerary-detail">
             <li>震撼的地熱奇觀：登別地獄谷。</li>
-            <li>入住洞爺湖溫泉飯店，洗滌旅途疲憊並享用精緻懷石或自助餐。</li>
+            <li>入住洞爺湖溫泉飯店，洗滌旅途疲憊並享用精緻美饌。</li>
         </ul>
         <div class="img-box"><img src="toya_hotel.jpeg"></div>
         <div class="info-grid">
@@ -251,11 +273,11 @@
             <span class="day-route">新千歲空港 ✈ 桃園國際機場</span>
         </div>
         <div class="recommend-tag">
-            <b>🛍️ 國內線推薦：</b> 哆啦A夢天空樂園、Royce'巧克力世界、北菓樓。
+            <b>🛍️ 機場購物推薦：</b> 哆啦A夢天空樂園、Royce'巧克力世界、北菓樓。
         </div>
         <ul class="itinerary-detail">
-            <li>前往日本最好買的機場「新千歲機場」做最後補貨。</li>
-            <li>帶著滿滿的回憶搭機返回台北。</li>
+            <li>前往日本最好買的「新千歲機場國內線」做最後補貨。</li>
+            <li>帶著滿滿的北國回憶搭機返回台北。</li>
         </ul>
         <div class="info-grid">
             <div class="info-item"><i class="bi bi-egg-fried"></i> <b>餐食：</b> 早：飯店內 / 午：自理 / 晚：機上</div>
