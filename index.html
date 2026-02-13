@@ -12,7 +12,7 @@
             --snow-white: #ffffff;
             --deep-blue: #2c3e50;
             --accent-blue: #0077be;
-            --glass: rgba(255, 255, 255, 0.85);
+            --tag-bg: #e1f5fe;
         }
 
         body {
@@ -35,87 +35,98 @@
             text-align: center;
         }
 
-        .container { max-width: 800px; margin: -30px auto 120px; padding: 0 15px; }
+        .container { max-width: 800px; margin: -30px auto 50px; padding: 0 15px; }
 
         .card {
-            background: var(--glass);
-            padding: 25px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            backdrop-filter: blur(10px);
-            margin-bottom: 25px;
-            border: 1px solid rgba(255,255,255,0.3);
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+            margin-bottom: 20px;
+            border: 1px solid rgba(255,255,255,0.5);
         }
 
         .section-title {
-            border-left: 5px solid var(--accent-blue);
-            padding-left: 15px;
-            margin: 30px 0 15px;
+            color: var(--accent-blue);
+            font-size: 1.4rem;
             font-weight: 700;
+            border-bottom: 2px solid var(--accent-blue);
+            padding-bottom: 5px;
+            margin: 30px 0 15px;
+            display: flex;
+            align-items: center;
         }
 
-        .flight-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 10px;
-            font-size: 0.85rem;
+        /* 明確行程標籤 */
+        .day-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
         }
-        .flight-table th { background: var(--accent-blue); color: white; padding: 8px; text-align: left; }
-        .flight-table td { padding: 8px; border-bottom: 1px solid #ddd; }
+        .day-badge {
+            background: var(--accent-blue);
+            color: white;
+            padding: 2px 12px;
+            border-radius: 5px;
+            font-weight: 700;
+        }
+        .day-route { font-weight: 700; font-size: 1.1rem; color: #333; }
+
+        /* 行程細項 */
+        .itinerary-detail {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0;
+        }
+        .itinerary-detail li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 8px;
+        }
+        .itinerary-detail li::before {
+            content: "\F26A"; /* Bootstrap Icon Circle */
+            font-family: "bootstrap-icons";
+            position: absolute;
+            left: 0;
+            color: var(--accent-blue);
+        }
 
         .img-box {
             margin: 15px 0;
-            background: #fff;
-            padding: 8px;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
             text-align: center;
         }
-        .img-box img { width: 100%; border-radius: 8px; display: block; }
+        .img-box img { width: 100%; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
 
-        .meal-box {
-            background: rgba(0, 119, 190, 0.05);
-            padding: 15px;
-            border-radius: 12px;
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
             margin-top: 15px;
-            font-size: 0.9rem;
+            background: #f8f9fa;
+            padding: 12px;
+            border-radius: 10px;
+            font-size: 0.85rem;
+        }
+        .info-item { display: flex; align-items: flex-start; gap: 5px; }
+        .info-item i { color: var(--accent-blue); }
+
+        .recommend-tag {
+            background: #fff3e0;
+            border-left: 4px solid #ff9800;
+            padding: 10px;
+            font-size: 0.85rem;
+            margin: 10px 0;
+            border-radius: 0 5px 5px 0;
         }
 
-        /* 推薦與餐廳資訊樣式 */
-        .info-box {
-            background: #fff;
-            border-left: 4px solid #ffcc00;
-            padding: 12px 15px;
-            margin: 15px 0;
-            border-radius: 0 10px 10px 0;
-            font-size: 0.9rem;
-        }
-        .recommend-box {
-            background: #fff;
-            border-left: 4px solid #4caf50;
-            padding: 12px 15px;
-            margin: 15px 0;
-            border-radius: 0 10px 10px 0;
-            font-size: 0.9rem;
-        }
-        .box-title { font-weight: 700; margin-bottom: 5px; display: block; }
-
-        .sticky-cta {
-            position: fixed;
-            bottom: 25px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 85%;
-            max-width: 350px;
-            background: var(--accent-blue);
+        .flight-info {
+            background: #333;
             color: white;
-            text-align: center;
-            padding: 14px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
-            box-shadow: 0 8px 25px rgba(0, 119, 190, 0.3);
-            z-index: 9999;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            font-size: 0.85rem;
         }
     </style>
 </head>
@@ -124,96 +135,134 @@
 <div class="hero">
     <div class="hero-content">
         <h1 style="margin:0">北海道星野度假村客製6日</h1>
-        <p>星宇航空 LUXURY TRAVEL</p>
+        <p>星宇航空．極致雪國體驗</p>
     </div>
 </div>
 
 <div class="container">
-    <div class="card">
-        <h3 style="margin-top:0; color:var(--accent-blue)"><i class="bi bi-airplane-engines"></i> 航班資訊 (星宇航空)</h3>
-        <table class="flight-table">
-            <tr><th>航程</th><th>航班</th><th>起飛</th><th>抵達</th></tr>
-            <tr><td>台北 → 札幌</td><td>JX850</td><td>09:25</td><td>14:00</td></tr>
-            <tr><td>札幌 → 台北</td><td>JX851</td><td>15:15</td><td>18:50</td></tr>
-        </table>
+    
+    <div class="flight-info">
+        <div style="font-weight:700; border-bottom:1px solid #555; padding-bottom:5px; margin-bottom:8px;">
+            <i class="bi bi-airplane"></i> 航班安排：星宇航空 (STARLUX)
+        </div>
+        <div>去程：JX850 | 台北 09:25 ➔ 札幌 14:00</div>
+        <div>回程：JX851 | 札幌 15:15 ➔ 台北 18:50</div>
     </div>
 
-    <h3 class="section-title">Day 01 | 飛向北方大地</h3>
+    <div class="section-title"><i class="bi bi-calendar-event me-2"></i> DAY 01 | 飛向北方大地</div>
     <div class="card">
-        <span class="day-num">DAY 1</span>
-        <p>台北 ✈ 札幌新千歲空港 → 星野 TOMAMU 渡假村</p>
+        <div class="day-header">
+            <span class="day-badge">行程</span>
+            <span class="day-route">桃園機場 ✈ 札幌新千歲空港 → 星野 TOMAMU</span>
+        </div>
+        <ul class="itinerary-detail">
+            <li>搭乘星宇航空精品客機，享用機上餐點。</li>
+            <li>抵達後前往北海道地標「星野 TOMAMU 渡假村」。</li>
+            <li>晚間於網紅景點「森林餐廳」享用豐盛自助餐。</li>
+        </ul>
         <div style="display: flex; gap: 5px; margin: 10px 0;">
             <img src="forest_restaurant_1.jpeg" style="width:50%; border-radius:10px;">
             <img src="forest_restaurant_2.jpeg" style="width:50%; border-radius:10px;">
         </div>
-        <div class="meal-box">🍴 晚餐：森林自助式餐廳 / 🏨 住宿：星野 TOMAMU 渡假村</div>
+        <div class="info-grid">
+            <div class="info-item"><i class="bi bi-egg-fried"></i> <b>餐食：</b> 早：自理 / 午：機上 / 晚：森林餐廳</div>
+            <div class="info-item"><i class="bi bi-house-door"></i> <b>住宿：</b> 星野 TOMAMU 渡假村</div>
+        </div>
     </div>
 
-    <h3 class="section-title">Day 02 | 星野渡假村全日體驗</h3>
+    <div class="section-title"><i class="bi bi-calendar-event me-2"></i> DAY 02 | 星野全日悠遊</div>
     <div class="card">
-        <span class="day-num">DAY 2</span>
+        <div class="day-header">
+            <span class="day-badge">行程</span>
+            <span class="day-route">水之教堂 → 雪上活動 → 微笑海灘 → 木林之湯</span>
+        </div>
+        <ul class="itinerary-detail">
+            <li>參訪安藤忠雄大師作品「水之教堂」。</li>
+            <li>盡情享受渡假村內雪上活動設施。</li>
+            <li>全台室內最大的室內人造浪泳池「微笑海灘」。</li>
+        </ul>
         <div class="img-box"><img src="water_chapel.jpeg"></div>
         <div class="img-box"><img src="map.jpeg"></div>
-        <div class="meal-box">🏨 住宿：星野 TOMAMU 渡假村</div>
+        <div class="info-grid">
+            <div class="info-item"><i class="bi bi-egg-fried"></i> <b>餐食：</b> 早：飯店內 / 午：自理 / 晚：自理</div>
+            <div class="info-item"><i class="bi bi-house-door"></i> <b>住宿：</b> 星野 TOMAMU 渡假村</div>
+        </div>
     </div>
 
-    <h3 class="section-title">Day 03 | 萌動動物園與購物</h3>
+    <div class="section-title"><i class="bi bi-calendar-event me-2"></i> DAY 03 | 萌動動物園與札幌</div>
     <div class="card">
-        <span class="day-num">DAY 3</span>
-        <p>旭山動物園 → 免稅店 → 札幌狸小路商店街</p>
-        
-        <div class="info-box">
-            <span class="box-title" style="color: #d4a017;"><i class="bi bi-info-circle"></i> 動物園午餐自理推薦：</span>
-            <ul style="margin:5px 0; padding-left:20px;">
-                <li>旭山動物園中央食堂</li>
-                <li>Food Base Cafe TOTORI</li>
-                <li>Museum Cafe ASAHIYAMA</li>
-                <li>カムイチカプ (Kamuy-Cikap)</li>
-            </ul>
+        <div class="day-header">
+            <span class="day-badge">行程</span>
+            <span class="day-route">旭山動物園 → 免稅店 → 札幌狸小路商店街</span>
         </div>
-
-        <div class="recommend-box">
-            <span class="box-title" style="color: #2e7d32;"><i class="bi bi-bag-check"></i> 狸小路推薦必逛：</span>
-            藥妝店 (松本清、札幌藥妝)、唐吉訶德、伴手禮店 (土產屋)。
+        <div class="recommend-tag">
+            <b>🍴 午餐自理推薦：</b> 中央食堂、Cafe TOTORI、Museum Cafe、カムイチカプ
         </div>
-
+        <ul class="itinerary-detail">
+            <li>觀看超萌「企鵝散步」與北極熊餵食秀。</li>
+            <li>札幌最大規模「狸小路商店街」盡情購物、享受土產。</li>
+        </ul>
         <div class="img-box"><img src="penguin_walk.jpeg"></div>
         <div class="img-box" style="border: 1px dashed #ccc;"><img src="zoo_map.jpeg"></div>
-        <div class="meal-box">🏨 住宿：札幌系列飯店</div>
-    </div>
-
-    <h3 class="section-title">Day 04 | 浪漫小樽巡禮</h3>
-    <div class="card">
-        <span class="day-num">DAY 4</span>
-        <p>小樽運河 → 北海道神宮 → 札幌三大螃蟹放題</p>
-        <div class="recommend-box">
-            <span class="box-title" style="color: #2e7d32;"><i class="bi bi-shop"></i> 小樽推薦：</span>
-            北一哨子館、音樂盒博物館、LeTAO 總店蛋糕。
+        <div class="info-grid">
+            <div class="info-item"><i class="bi bi-egg-fried"></i> <b>餐食：</b> 早：飯店內 / 午：自理 / 晚：自理</div>
+            <div class="info-item"><i class="bi bi-house-door"></i> <b>住宿：</b> 札幌市區系列飯店</div>
         </div>
-        <div class="meal-box">🍴 晚餐：三大螃蟹吃到飽 / 🏨 住宿：札幌系列飯店</div>
     </div>
 
-    <h3 class="section-title">Day 05 | 溫泉之夜</h3>
+    <div class="section-title"><i class="bi bi-calendar-event me-2"></i> DAY 04 | 浪漫小樽與螃蟹盛宴</div>
     <div class="card">
-        <span class="day-num">DAY 5</span>
+        <div class="day-header">
+            <span class="day-badge">行程</span>
+            <span class="day-route">小樽運河 → 北海道神宮 → 札幌三大螃蟹放題</span>
+        </div>
+        <ul class="itinerary-detail">
+            <li>小樽運河散策：北一哨子、音樂盒博物館、LeTAO甜點。</li>
+            <li>北海道總鎮守「北海道神宮」參拜祈福。</li>
+            <li><b>特別安排：</b>晚餐享用三大螃蟹(鱈場、長腳、毛蟹)吃到飽。</li>
+        </ul>
+        <div class="info-grid">
+            <div class="info-item"><i class="bi bi-egg-fried"></i> <b>餐食：</b> 早：飯店內 / 午：自理 / 晚：三大螃蟹吃到飽</div>
+            <div class="info-item"><i class="bi bi-house-door"></i> <b>住宿：</b> 札幌市區系列飯店</div>
+        </div>
+    </div>
+
+    <div class="section-title"><i class="bi bi-calendar-event me-2"></i> DAY 05 | 溫泉奇觀之夜</div>
+    <div class="card">
+        <div class="day-header">
+            <span class="day-badge">行程</span>
+            <span class="day-route">市區觀光 → 登別地獄谷 → 洞爺湖溫泉酒店</span>
+        </div>
+        <ul class="itinerary-detail">
+            <li>震撼的地熱奇觀：登別地獄谷。</li>
+            <li>入住洞爺湖溫泉飯店，洗滌旅途疲憊並享用精緻懷石或自助餐。</li>
+        </ul>
         <div class="img-box"><img src="toya_hotel.jpeg"></div>
-        <div class="meal-box">🏨 住宿：洞爺湖華美酒店</div>
+        <div class="info-grid">
+            <div class="info-item"><i class="bi bi-egg-fried"></i> <b>餐食：</b> 早：飯店內 / 午：自理 / 晚：飯店內享用</div>
+            <div class="info-item"><i class="bi bi-house-door"></i> <b>住宿：</b> 洞爺湖華美酒店</div>
+        </div>
     </div>
 
-    <h3 class="section-title">Day 06 | 國內線購物與賦歸</h3>
+    <div class="section-title"><i class="bi bi-calendar-event me-2"></i> DAY 06 | 購物與歸途</div>
     <div class="card">
-        <span class="day-num">DAY 6</span>
-        <p>新千歲空港 ✈ 台北</p>
-        <div class="recommend-box">
-            <span class="box-title" style="color: #2e7d32;"><i class="bi bi-cart4"></i> 新千歲機場國內線推薦：</span>
-            哆啦A夢天空樂園、Royce' Chocolate World、卡樂比 Calbee+、北菓樓。
+        <div class="day-header">
+            <span class="day-badge">行程</span>
+            <span class="day-route">新千歲空港 ✈ 桃園國際機場</span>
+        </div>
+        <div class="recommend-tag">
+            <b>🛍️ 國內線推薦：</b> 哆啦A夢天空樂園、Royce'巧克力世界、北菓樓。
+        </div>
+        <ul class="itinerary-detail">
+            <li>前往日本最好買的機場「新千歲機場」做最後補貨。</li>
+            <li>帶著滿滿的回憶搭機返回台北。</li>
+        </ul>
+        <div class="info-grid">
+            <div class="info-item"><i class="bi bi-egg-fried"></i> <b>餐食：</b> 早：飯店內 / 午：自理 / 晚：機上</div>
+            <div class="info-item"><i class="bi bi-airplane-engines"></i> <b>抵達：</b> 18:50 桃園機場</div>
         </div>
     </div>
 </div>
-
-<a href="tel:請填入電話" class="sticky-cta">
-    <i class="bi bi-telephone-fill"></i> 立即諮詢行程 (點此撥號)
-</a>
 
 </body>
 </html>
