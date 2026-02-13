@@ -24,9 +24,10 @@
             background-image: linear-gradient(180deg, #d6eaf8 0%, #f0f8ff 100%);
         }
 
+        /* 頂部大圖 - 請準備 hero.jpg */
         .hero {
             height: 50vh;
-            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('image.png') center/cover no-repeat;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('hero.jpg') center/cover no-repeat;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -63,7 +64,7 @@
 
         .day-num { color: var(--accent-blue); font-weight: 700; font-size: 1.5rem; }
 
-        /* 新增：地圖照片樣式 */
+        /* 地圖區塊 - 請準備 map.jpg */
         .map-container {
             margin-top: 15px;
             text-align: center;
@@ -79,7 +80,6 @@
             cursor: zoom-in;
             transition: 0.3s;
         }
-        .map-image:hover { opacity: 0.9; }
         .map-caption {
             font-size: 0.85rem;
             color: #666;
@@ -87,7 +87,7 @@
             display: block;
         }
 
-        .meal-info { background: #f8f9fa; padding: 10px 15px; border-radius: 8px; margin-top: 15px; font-size: 0.9rem; }
+        .meal-info { background: #f8f9fa; padding: 10px 15px; border-radius: 8px; margin-top: 15px; font-size: 0.9rem; line-height: 1.6; }
 
         .sticky-cta {
             position: fixed;
@@ -119,8 +119,8 @@
 
 <div class="container">
     <div class="highlights">
-        <h3 style="margin-top:0"><i class="bi bi-map"></i> 行程精華</h3>
-        <p>特別入住兩晚星野 TOMAMU，盡情享受渡假村內的各式設施與美景。</p>
+        <h3 style="margin-top:0"><i class="bi bi-star-fill"></i> 行程特色</h3>
+        <p>入住星野 TOMAMU 渡假村、洞爺湖溫泉，享受北國三大蟹放題與絕美冬景。</p>
     </div>
 
     <h3 class="section-title">Day 02 | 星野渡假村全日體驗</h3>
@@ -129,7 +129,7 @@
         <p>安藤忠雄經典建築【水之教堂】 → 雲海平台（視天氣） → 微笑海灘 → 木林之湯溫泉</p>
         
         <div class="map-container">
-            <img src="map.png" alt="星野度假村地圖" class="map-image">
+            <img src="map.jpg" alt="星野度假村地圖" class="map-image">
             <span class="map-caption"><i class="bi bi-info-circle"></i> 星野 TOMAMU 渡假村設施導覽圖</span>
         </div>
 
@@ -139,7 +139,7 @@
         </div>
     </div>
 
-    </div>
+</div>
 
 <a href="tel:請填入電話" class="sticky-cta">
     <i class="bi bi-telephone-fill"></i> 立即諮詢行程 (點此撥號)
